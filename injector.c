@@ -190,7 +190,7 @@ int main(int argc, char *argv[]) {
 	kernel32lib = GetModuleHandle("kernel32");
 
 	procaddr = (LPTHREAD_START_ROUTINE)GetProcAddress(kernel32lib,
-		freedll ? "FreeLibraryA" : "LoadLibraryA")
+		freedll ? "FreeLibraryA" : "LoadLibraryA");
 
 	hThread = CreateRemoteThread(hProcess, NULL, 0,
 		procaddr, remotelib, 0, NULL);
